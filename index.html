@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coming Soon - Bhumi Charitable Trust</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            color: #616161;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .flex-column{
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 10px 0;
+        }
+
+        main {
+            overflow: auto;
+            flex-grow: 1;
+            padding-top: 60px;
+        }
+        .main-wrap{
+            align-items: center;
+        }
+
+        .counter-wrapper {
+            width: 50%;
+            padding: 0 30px;
+        }
+        .count-wrap{
+            justify-content: space-between;
+        }
+        .count .text{
+            color: #BDBDBD; 
+            text-transform: capitalize;
+        }  
+        .count .time{
+            color: #616161;
+            font-size: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            letter-spacing: 10px;
+            color: #074;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .img-conatiner {
+            padding: 0 30px;
+            width: 50%;
+        }
+
+        .img-conatiner img {
+            max-width: 100%;
+        }
+        .contact-us{
+            margin: 60px auto 0;
+            justify-content: center;
+        }
+        .contact-us input{
+            padding: 8px 16px;
+            border: 1px solid #BDBDBD;
+            outline: 0;
+            width: 300px;
+            display: inline-block;
+            transition: .25s all;
+            font-family: 'Poppins', sans-serif;
+            margin-right: 10px;
+
+        }
+        .contact-us input:focus{
+            border: 1px solid #9a9a9a;
+        }
+        .btn{
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 0;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: #074;
+            font-family: 'Poppins', sans-serif;
+            /* margin-left: 16px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <img src="assets/images/BHUMI LOGO.png" width="60px" alt="">
+            </div>
+        </header>
+        <main>
+             <!-- <span ></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+            <div class="label">
+                <span>Days</span>
+                <span>Hours</span>
+                <span>Minutes</span>
+                <span>Seconds</span>
+            </div> -->
+            <div class="container">
+                <div class="main-wrap d-flex">
+                    <div class="counter-wrapper text-center">
+                        <h1>Coming soon</h1>
+                        <div class="d-flex count-wrap">
+                            <!-- Days -->
+                            <div class="text-center d-flex flex-column count">
+                                <div class="text">Days</div>
+                                <div class="time" id="days">
+                                </div>
+                            </div>
+                            <!-- hours -->
+                            <div class="text-center d-flex flex-column count">
+                                <div class="text">hours</div>
+                                <div class="time" id="hours">
+                                </div>
+                            </div>
+                            <!-- minutes -->
+                            <div class="text-center d-flex flex-column count">
+                                <div class="text">minutes</div>
+                                <div class="time" id="minutes">
+                                </div>
+                            </div>
+                            <!-- seconds -->
+                            <div class="text-center d-flex flex-column count">
+                                <div class="text">seconds</div>
+                                <div class="time" id="seconds">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-conatiner">
+                        <img src="assets/images/under_construction.svg" alt="">
+                    </div>
+                </div>
+                <div class="d-flex contact-us">
+                    <form action="" class="d-flex">
+                        <input type="text">
+                        <button class="btn btn-primary"> <img src="assets/images/paper-plane.png" style="margin-right:10px;" width="16px" alt=""> Notify me ! </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+  <script>
+    // Set the date we're counting down to
+let countDownDate = new Date("April 30, 2023 00:00:00").getTime();
+
+// Update the count down every 1 second
+let x = setInterval(function() {
+
+  // Get today's date and time
+  let now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  let distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Add 0 prefix to single digit numbers
+  days = (days < 10) ? "0" + days : days;
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  // Output the result in the corresponding span elements
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  // If the count down is finished, show a message
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown-timer").innerHTML = "<h1>We're Live Now!</h1>";
+  }
+}, 1000);
+
+  </script>
+</body>
+
+</html>
